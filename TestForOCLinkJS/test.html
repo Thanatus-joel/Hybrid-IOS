@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta name="viewport" content="inital-scale=1,maximun-scale=1,minimum-scale=1,user-scalable=no,width=device-width" />
+    <meta content="no" name="apple-mobile-web-app-capable" />
+    <style>
+      .send,.render{
+        width: 200px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        border: 1px solid #ccc;
+        cursor: pointer;
+      }
+    </style>
+    <script type="text/javascript" src="zepto.js"></script>
+    <script>
+      function connectWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) {
+          callback(WebViewJavascriptBridge);
+        } else {
+          document.addEventListener('WebViewJavascriptBridgeReady', function() {
+            callback(WebViewJavascriptBridge);
+          }, false);
+        }
+      }
+
+      $(function(){
+
+        //与OS通信的Bridge
+        connectWebViewJavascriptBridge(function(bridge){
+          
+          /** function log(message, data) {
+            var log = document.getElementById('log');
+            var el = document.createElement('div');
+            el.className = 'logLine';
+            el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data);
+            if (log.children.length) { log.insertBefore(el, log.children[0]) }
+            else { log.appendChild(el) }
+          } */
+
+          //初始化Bridge不用处理什么
+          bridge.init(function(message, responseCallback) {
+                //log('JS got a message', message)
+                var data = { 'Javascript Responds':'Wee!' }
+                //log('JS responding with', data)
+                      responseCallback(data)
+                      alert(message)
+          });
+
+          //OS调用本地JS方法
+          bridge.registerHandler('getMeSomeString', function(data,responseCallback) {
+                                 alert(data);
+            //log('ObjC called getMeSomeString with', data);
+            var responseData = { 'Javascript Says':'Right back atcha!' }
+            //log('JS responding with', responseData);
+                                 responseCallback(responseData);
+          });
+
+          //点击发送数据到OS
+          $(".send").on("tap", function(){
+            var data = {"aaaa":"aaaaa"};
+            bridge.send(data);//无回调
+          });
+
+          //点击向OS请求数据
+          $(".render").on("tap", function(){
+            var sendData = {"bbbb":"bbbbbb"};
+            var ccc = $(this);
+            //调用OS的方法
+            bridge.callHandler('responseSomeString', sendData, function(data){
+              ccc.text(data);
+            });
+          });
+
+        });
+        
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="send">
+      Send Handler
+    </div>
+    <div class="render">
+      Call Handler
+    </div>
+  </body> 
+</html>

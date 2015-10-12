@@ -1,0 +1,170 @@
+@charset="UTF-8";
+/*
+查看联系人信息、
+查看电子邮件、
+查看银行卡等查看类的CSS样式
+*/
+.banklist{
+	background: #fff;
+	border-bottom: 1px solid #c8c7cc;
+}
+.bank_item{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	width: 100%;
+	height: 5.5rem;
+}
+.bank_item div{
+	line-height: 5.5rem;
+}
+.bankicon{
+	-webkit-flex: 1.3;
+	flex: 1.3;
+	width: 5.5rem;
+	height: 100%;
+	position: relative;
+}
+.bank_info{
+	-webkit-flex: 10;
+	flex: 10;
+	border-bottom: 1px solid #c8c7cc;
+}
+.bank_info_flex{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	width: 100%;
+	height: 100%;
+}
+.last_item{
+	border: 0 none;
+}
+.bank_info_flex .bank_name{
+	-webkit-flex: 3;
+	flex: 3;
+	font-size: 1.8rem;
+	color: #000;
+}
+.bank_info_flex .bank_detail{
+	-webkit-flex: 3;
+	flex: 3;
+	text-align: right;
+	font-size: 1.6rem;
+	padding-right: 1.2rem;
+}
+.bank_detail .bank_type{
+	color: #b3b3b3;
+}
+.bank_detail .bank_qty{
+	color: #ff9500;
+}
+.icon_wrap{
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.icon_cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+.bankicon .inner_img{
+	width: 2.5rem;
+	height: 2.5rem;
+	margin: 0 auto;
+	background-size: cover;
+}
+.icon_bank_003{
+	background: url(icon_bank_ny.png) 0 0 no-repeat;
+}
+.icon_bank_004{
+	background: url(icon_bank_zg.png) 0 0 no-repeat;
+}
+.icon_bank_009{
+	background: url(icon_bank_gd.png) 0 0 no-repeat;
+}
+.icon_bank_016{
+	background: url(icon_bank_gf.png) 0 0 no-repeat;
+}
+.icon_bank_002{
+	background: url(icon_bank_gs.png) 0 0 no-repeat;
+}
+.icon_bank_005{
+	background: url(icon_bank_jh.png) 0 0 no-repeat;
+}
+.icon_bank_jt{
+	background: url(icon_bank_jt.png) 0 0 no-repeat;
+}
+.icon_bank_014{
+	background: url(icon_bank_ms.png) 0 0 no-repeat;
+}
+.icon_bank_920{
+	background: url(icon_bank_pa.png) 0 0 no-repeat;
+}
+.icon_bank_010{
+	background: url(icon_bank_pf.png) 0 0 no-repeat;
+}
+.icon_bank_sh{
+	background: url(icon_bank_sh.png) 0 0 no-repeat;
+}
+.icon_bank_011{
+	background: url(icon_bank_xy.png) 0 0 no-repeat;
+}
+.icon_bank_934{
+	background: url(icon_bank_yz.png) 0 0 no-repeat;
+}
+.icon_bank_007{
+	background: url(icon_bank_zs.png) 0 0 no-repeat;
+}
+.icon_bank_015{
+	background: url(icon_bank_zx.png) 0 0 no-repeat;
+}
+@media (-webkit-min-device-pixel-ratio: 2){
+	.icon_bank_003{
+		background: url(icon_bank_ny@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_004{
+		background: url(icon_bank_zg@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_009{
+		background: url(icon_bank_gd@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_016{
+		background: url(icon_bank_gf@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_002{
+		background: url(icon_bank_gs@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_005{
+		background: url(icon_bank_jh@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_jt{
+		background: url(icon_bank_jt@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_014{
+		background: url(icon_bank_ms@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_920{
+		background: url(icon_bank_pa@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_010{
+		background: url(icon_bank_pf@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_sh{
+		background: url(icon_bank_sh@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_011{
+		background: url(icon_bank_xy@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_934{
+		background: url(icon_bank_yz@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_007{
+		background: url(icon_bank_zs@2x.png) 0 0 no-repeat;
+	}
+	.icon_bank_015{
+		background: url(icon_bank_zx@2x.png) 0 0 no-repeat;
+	}
+}

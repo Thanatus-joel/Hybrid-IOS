@@ -1,0 +1,1 @@
+function refresh(e,i){e.on("swipeDown",function(){$(this).offset().top>=0&&i.callHandler("refresh","1",function(e){})})}!function(e){e.WebView2JsBridge=function(i){e.WebViewJavascriptBridge?i(WebViewJavascriptBridge):document.addEventListener("WebViewJavascriptBridgeReady",function(){i(WebViewJavascriptBridge)},!1)}}(window);
